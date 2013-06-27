@@ -22,7 +22,10 @@ AssetManager::Application.configure do
   config.action_mailer.smtp_settings = {
     address: ENV['mail_server'],
     port: ENV['mail_port'],
-    authentication: ENV['mail_auth']
+    authentication: ENV['mail_auth'],
+    enable_starttls_auto: true,
+    user_name: ENV['gmail_user'],
+    password: ENV['gmail_pass']
   }
 
   # Print deprecation notices to the Rails logger
